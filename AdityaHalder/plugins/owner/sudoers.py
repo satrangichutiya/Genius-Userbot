@@ -7,7 +7,7 @@ from ...modules.mongo.sudoers import add_sudo, del_sudo
 @super_user_only
 async def add_sudo_user(client, message):
     try:
-        aux = await eor(message, "**🔄 Processing ...**")
+        aux = await eor(message, "**🔄 RUKO JI🥹 ...**")
         if not message.reply_to_message:
             if len(message.command) != 2:
                 return await aux.edit(
