@@ -6,7 +6,7 @@ from ...modules.mongo.raidzone import *
 @sudo_users_only
 async def add_fuck_raid(client, message):
     try:
-        aux = await eor(message, "**🔄 Processing ...**")
+        aux = await eor(message, "**🔄 RUK SALE ...**")
         if not message.reply_to_message:
             if len(message.command) != 2:
                 return await aux.edit(
@@ -28,10 +28,10 @@ async def add_fuck_raid(client, message):
         fraid = await add_fuckraid_user(user_id)
         if fraid:
             return await aux.edit(
-                "**🤖 Successfully Added Reply Raid On This User.**"
+                "**🐉 RUK TERI GAAND MAARTA HU ABHI 🥲.**"
             )
         return await aux.edit(
-            "**🤖 Hey, Reply Raid Already Active On This User❗**"
+            "**🐉ABE USKI GAAND ME DANDA DAL DIYA GAYA HAIN ❗**"
         )
     except Exception as e:
         print("Error: `{e}`")
@@ -66,10 +66,10 @@ async def del_fuck_raid(client, message):
         fraid = await del_fuckraid_user(user_id)
         if fraid:
             return await aux.edit(
-                "**🤖 Successfully Removed Reply Raid From This User.**"
+                "**🐉MAA CHUD LODE CHAI KE PAISE DE NAHI TO MOOJ ME DE DUNGA CHOKO.**"
             )
         return await aux.edit(
-            "**🤖 Hey, Reply Raid Not Active On This User❗**"
+            "**😡 HAA YEH KARLO PEHLE ❗**"
         )
     except Exception as e:
         print("Error: `{e}`")
