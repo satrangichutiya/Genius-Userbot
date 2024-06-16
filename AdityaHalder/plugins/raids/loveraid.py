@@ -28,7 +28,7 @@ async def add_love_raid(client, message):
         lraid = await add_loveraid_user(user_id)
         if lraid:
             return await aux.edit(
-                "**🤖 Successfully Added Love Raid On This User.**"
+                "**🐉 Successfully Added Love Raid On This User.**"
             )
         return await aux.edit(
             "**🤖 Hey, Love Raid Already Active On This User❗**"
