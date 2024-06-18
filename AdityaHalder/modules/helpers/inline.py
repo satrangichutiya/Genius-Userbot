@@ -18,7 +18,7 @@ async def help_menu_logo(answer):
             photo_url=f"{thumb_image}",
             title="🥀 Help Menu ✨",
             thumb_url=f"{thumb_image}",
-            description=f"🥀 Open Help Menu Of Genius-Userbot ✨...",
+            description=f"🥀 Open Help Menu Of SATHYA-Userbot ✨...",
             caption=f"""
 **🥀 Welcome To Help Menu Of
 SATHYA Userbot » {__version__} ✨...
