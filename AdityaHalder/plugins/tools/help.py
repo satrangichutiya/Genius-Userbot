@@ -68,7 +68,7 @@ Get Userbot Commands.
     if plug_match:
         plugin = plug_match.group(1)
         text = (
-            "**🥀 Welcome To Help Menu Of:\n♨️ Plugin :** {}\n".format(
+            "**🥀 Welcome To Help Menu Of Sathya userbot Plugin :** {}\n".format(
                 plugs[plugin].__NAME__
             )
             + plugs[plugin].__MENU__
