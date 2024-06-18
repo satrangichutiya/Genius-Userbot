@@ -6,11 +6,11 @@ from ...modules.mongo.raidzone import *
 @sudo_users_only
 async def add_love_raid(client, message):
     try:
-        aux = await eor(message, "**🔄 Processing ...**")
+        aux = await eor(message, "**🔄 RUK LGA RAHA HU...**")
         if not message.reply_to_message:
             if len(message.command) != 2:
                 return await aux.edit(
-                    "**🤖 Reply to a user's message or give username/user_id.**"
+                    "** Reply to a user's message or give username/user_id.**"
                 )
             user = message.text.split(None, 1)[1]
             if "@" in user:
@@ -22,13 +22,13 @@ async def add_love_raid(client, message):
 
         if user_id == message.from_user.id:
             return await aux.edit(
-                "**🤣 How Fool, You Want To Activate Love Raid On Your Own ID❓**"
+                "**🤣 ABE SALE CHUTIYA HAIN KYA SALE❓**"
             )
         
         lraid = await add_loveraid_user(user_id)
         if lraid:
             return await aux.edit(
-                "**🐉 Successfully Added Love Raid On This User.**"
+                "**🐉 LGA DIYA Love Raid On This User.**"
             )
         return await aux.edit(
             "**🤖 Hey, Love Raid Already Active On This User❗**"
@@ -44,7 +44,7 @@ async def add_love_raid(client, message):
 @sudo_users_only
 async def del_love_raid(client, message):
     try:
-        aux = await eor(message, "**🔄 Processing ...**")
+        aux = await eor(message, "**🔄 RUK ...**")
         if not message.reply_to_message:
             if len(message.command) != 2:
                 return await aux.edit(
@@ -66,10 +66,10 @@ async def del_love_raid(client, message):
         lraid = await del_loveraid_user(user_id)
         if lraid:
             return await aux.edit(
-                "**🤖 Successfully Removed Love Raid From This User.**"
+                "** HATA DI Love Raid From This User.**"
             )
         return await aux.edit(
-            "**🤖 Hey, Love Raid Not Active On This User❗**"
+            "**🐉NACCHO REY SAB❗**"
         )
     except Exception as e:
         print("Error: `{e}`")
