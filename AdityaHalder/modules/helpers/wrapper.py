@@ -79,10 +79,10 @@ def inline_wrapper(func):
                         (
                             InlineQueryResultPhoto(
                                 photo_url=f"https://telegra.ph/file/8c8853f50d021a2c4368a.jpg",
-                                title="🥀 DRAGON Userbot ✨",
+                                title="🥀 SATHYA Userbot ✨",
                                 thumb_url=f"https://telegra.ph/file/8c8853f50d021a2c4368a.jpg",
-                                description=f"🌷 Deploy Your Own DRAGON-Userbot 🌿...",
-                                caption=f"<b>🥀 Welcome » To » DRAGON 🌷\n✅ Userbot {__version__} ✨...</b>",
+                                description=f"🌷 Deploy Your Own SATHYA-Userbot 🌿...",
+                                caption=f"<b>🥀 Welcome » To » SATHYA 🌷\n✅ Userbot {__version__} ✨...</b>",
                                 reply_markup=InlineKeyboardMarkup(button),
                             )
                         )
@@ -98,7 +98,7 @@ def inline_wrapper(func):
                             InlineQueryResultArticle(
                                 title="",
                                 input_message_content=InputTextMessageContent(
-                                    f"||**🥀 Please, Deploy Your Own DRAGON Userbot❗...\n\nRepo:** <i>https://github.com/AdityaHalder/Genius-Userbot/</i>||"
+                                    f"||**🥀 Please, Deploy Your Own SATHYA Userbot❗...\n\nRepo:** <i>https://github.com/AdityaHalder/Genius-Userbot/</i>||"
                                 ),
                             )
                         )
