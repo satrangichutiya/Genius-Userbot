@@ -21,12 +21,12 @@ async def help_menu_logo(answer):
             description=f"🥀 Open Help Menu Of Genius-Userbot ✨...",
             caption=f"""
 **🥀 Welcome To Help Menu Of
-DRAGON Userbot » {__version__} ✨...
+SATHYA Userbot » {__version__} ✨...
 
 Click On Below 🌺 Buttons To
 Get Userbot Commands.
 
-🌷Powered By : [DRAGON Server](https://t.me/DRAGONUSERBOT1).**
+🌷Powered By : [SATHYA Server](https://t.me/SATHYA_SEVER).**
             """,
             reply_markup=InlineKeyboardMarkup(button),
         )
@@ -47,7 +47,7 @@ Genius Userbot » {__version__} ✨...
 Click On Below 🌺 Buttons To
 Get Userbot Commands.
 
-🌷Powered By : [🐉DRAGON Server](https://t.me/DRAGONUSERBOT1).**""",
+🌷Powered By : [🐉SATHYA Server](https://t.me/SATHYA_SEVER).**""",
             disable_web_page_preview=True
             ),
             reply_markup=InlineKeyboardMarkup(button),
