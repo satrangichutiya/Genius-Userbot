@@ -57,12 +57,12 @@ async def help_button(client, query):
     back_match = re.match(r"help_back", query.data)
     top_text = f"""
 **🥀 Welcome To Help Menu Of
-🐉 DRAGON Userbot » {__version__} ✨...
+🐉 SATHYA Userbot » {__version__} ✨...
 
 Click On Below 🌺 Buttons To
 Get Userbot Commands.
 
-🌷Powered By : [DRAGON SERVER](https://t.me/DRAGONUSERBOT1).**
+🌷Powered By : [SATHYA SERVER](https://t.me/SATHYA_SEVER).**
 """
     
     if plug_match:
