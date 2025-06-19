@@ -1,6 +1,8 @@
-import asyncio, importlib
+import asyncio
+import importlib
 
 from pytgcalls import idle
+from keepalive import keep_alive  # 🟢 ADD THIS
 
 from . import logs, plugs, vars
 from .plugins import ALL_PLUGINS
@@ -16,19 +18,11 @@ async def main():
         imported_plugin = importlib.import_module(
             "AdityaHalder.plugins" + all_plugin
         )
-        if (hasattr
-            (
-                imported_plugin, "__NAME__"
-            ) and imported_plugin.__NAME__
-        ):
+        if hasattr(imported_plugin, "__NAME__") and imported_plugin.__NAME__:
             imported_plugin.__NAME__ = imported_plugin.__NAME__
-            if (
-                hasattr(
-                    imported_plugin, "__MENU__"
-                ) and imported_plugin.__MENU__
-            ):
-                plugs[imported_plugin.__NAME__.lower()
-                ] = imported_plugin
+            if hasattr(imported_plugin, "__MENU__") and imported_plugin.__MENU__:
+                plugs[imported_plugin.__NAME__.lower()] = imported_plugin
+
     await run_async_enums()
     logs.info(">> Successfully Imported All Plugins.")
     await run_async_inline()
@@ -39,6 +33,7 @@ async def main():
 
 
 if __name__ == "__main__":
+    keep_alive()  # 🟢 KEEP RENDER APP ALIVE
     loop = asyncio.get_event_loop()
     loop.run_until_complete(main())
-    print("Userbot Stopped !\nGoodBye ...")
+    print("Userbot Stopped!\nGoodBye...")
