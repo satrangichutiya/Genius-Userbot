@@ -6,4 +6,4 @@ python-dotenv==1.0.1
 tgcrypto==1.2.5
 youtube-search-python
 yt-dlp==2023.12.30
-pytgcalls==1.2.0
+pytgcalls==2.1.0
