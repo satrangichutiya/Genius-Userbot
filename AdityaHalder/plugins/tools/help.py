@@ -57,12 +57,12 @@ async def help_button(client, query):
     back_match = re.match(r"help_back", query.data)
     top_text = f"""
 **🥀 Welcome To Help Menu Of
-🐉 SATHYA Userbot » {__version__} ✨...
+ satya Userbot » {__version__} ✨...
 
 Click On Below 🌺 Buttons To
 Get Userbot Commands.
 
-🌷Powered By : [SATHYA SERVER](https://t.me/SATHYA_SEVER).**
+🌷Powered By : [SATHYA SERVER](https://t.me/SATHYA_0P).**
 """
     
     if plug_match:
