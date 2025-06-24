@@ -1,17 +1,34 @@
 import re
 
-from pyrogram import filters
-from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
+from pyrogram import *
+from pyrogram.types import *
 
-from ... import app, bot, plugs, version
-from ...modules.helpers.buttons import paginate_plugins
-from ...modules.helpers.wrapper import sudo_users_only, cb_wrapper
+from ... import *
+from ... import __version__
+from ...modules.helpers.buttons import *
+from ...modules.helpers.inline import *
+from ...modules.helpers.wrapper import *
 
 
-@app.on_message(filters.command("help") & filters.me)
+@app.on_message(cdx(["help"]))
 @sudo_users_only
 async def inline_help_menu(client, message):
+    image = None
     try:
+        if image:
+            bot_results = await app.get_inline_bot_results(
+                f"@{bot.me.username}", "help_menu_logo"
+            )
+        else:
+            bot_results = await app.get_inline_bot_results(
+                f"@{bot.me.username}", "help_menu_text"
+            )
+        await app.send_inline_bot_result(
+            chat_id=message.chat.id,
+            query_id=bot_results.query_id,
+            result_id=bot_results.results[0].id,
+        )
+    except Exception:
         bot_results = await app.get_inline_bot_results(
             f"@{bot.me.username}", "help_menu_text"
         )
@@ -20,44 +37,58 @@ async def inline_help_menu(client, message):
             query_id=bot_results.query_id,
             result_id=bot_results.results[0].id,
         )
-        await message.delete()
     except Exception as e:
-        print(f"Error sending inline help: {e}")
+        print(e)
+        return
+
+    try:
+        await message.delete()
+    except:
+        pass
+      
 
 
 @bot.on_callback_query(filters.regex(r"help_(.*?)"))
 @cb_wrapper
 async def help_button(client, query):
-    plug_match = re.match(r"help_plugin(.+?)", query.data)
-    prev_match = re.match(r"help_prev(.+?)", query.data)
-    next_match = re.match(r"help_next(.+?)", query.data)
+    plug_match = re.match(r"help_plugin\((.+?)\)", query.data)
+    prev_match = re.match(r"help_prev\((.+?)\)", query.data)
+    next_match = re.match(r"help_next\((.+?)\)", query.data)
     back_match = re.match(r"help_back", query.data)
-
     top_text = f"""
 **🥀 Welcome To Help Menu Of
-🐉 SATHYA Userbot » `{version}` ✨...
+🐉 SATHYA Userbot » {__version__} ✨...
 
-Click Below Buttons 🌺 For Commands!
+Click On Below 🌺 Buttons To
+Get Userbot Commands.
 
-🌷 Powered By: [SATHYA SERVER](https://t.me/SATHYA_SEVER).**
+🌷Powered By : [SATHYA SERVER](https://t.me/SATHYA_SEVER).**
 """
-
+    
     if plug_match:
         plugin = plug_match.group(1)
         text = (
-            f"**🥀 Help For Plugin:** `{plugin}`\n\n"
+            "**🥀 Welcome To Help Menu Of Sathya userbot Plugin :** {}\n".format(
+                plugs[plugin].__NAME__
+            )
             + plugs[plugin].__MENU__
         )
         key = InlineKeyboardMarkup(
-            [[InlineKeyboardButton("↪️ Back", callback_data="help_back")]]
+            [
+                [
+                    InlineKeyboardButton(
+                        text="↪️ Back", callback_data="help_back"
+                    )
+                ],
+            ]
         )
+
         await bot.edit_inline_text(
             query.inline_message_id,
             text=text,
             reply_markup=key,
-            disable_web_page_preview=True,
+            disable_web_page_preview=True
         )
-
     elif prev_match:
         curr_page = int(prev_match.group(1))
         await bot.edit_inline_text(
@@ -89,3 +120,5 @@ Click Below Buttons 🌺 For Commands!
             ),
             disable_web_page_preview=True,
         )
+
+  
