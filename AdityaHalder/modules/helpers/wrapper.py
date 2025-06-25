@@ -78,9 +78,9 @@ def inline_wrapper(func):
                     results=[
                         (
                             InlineQueryResultPhoto(
-                                photo_url=f"https://telegra.ph/file/8c8853f50d021a2c4368a.jpg",
+                                photo_url=f"https://files.catbox.moe/j6k0o5.jpg",
                                 title="🥀 SATHYA Userbot ✨",
-                                thumb_url=f"https://telegra.ph/file/8c8853f50d021a2c4368a.jpg",
+                                thumb_url=f"https://files.catbox.moe/j6k0o5.jpg",
                                 description=f"🌷 Deploy Your Own SATHYA-Userbot 🌿...",
                                 caption=f"<b>🥀 Welcome » To » SATHYA 🌷\n✅ Userbot {__version__} ✨...</b>",
                                 reply_markup=InlineKeyboardMarkup(button),
@@ -98,7 +98,7 @@ def inline_wrapper(func):
                             InlineQueryResultArticle(
                                 title="",
                                 input_message_content=InputTextMessageContent(
-                                    f"||**🥀 Please, Deploy Your Own SATHYA Userbot❗...\n\nRepo:** <i>https://github.com/AdityaHalder/Genius-Userbot/</i>||"
+                                    f"||**🥀 Please, Deploy Your Own SATHYA Userbot❗...\n\nRepo:** <i>@sathya_0p</i>||"
                                 ),
                             )
                         )
