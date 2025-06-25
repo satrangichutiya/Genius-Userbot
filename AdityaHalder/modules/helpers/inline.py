@@ -11,7 +11,7 @@ async def help_menu_logo(answer):
     if image:
         thumb_image = image
     else:
-        thumb_image = "https://telegra.ph/file/8c8853f50d021a2c4368a.jpg"
+        thumb_image = "https://files.catbox.moe/j6k0o5.jpg"
     button = paginate_plugins(0, plugs, "help")
     answer.append(
         InlineQueryResultPhoto(
@@ -20,13 +20,13 @@ async def help_menu_logo(answer):
             thumb_url=f"{thumb_image}",
             description=f"🥀 Open Help Menu Of SATHYA-Userbot ✨...",
             caption=f"""
-**🥀 Welcome To Help Menu Of
+**🥀 Welcome To Help Menu Of HIGH QUALITY 
 SATHYA Userbot » {__version__} ✨...
 
 Click On Below 🌺 Buttons To
 Get Userbot Commands.
 
-🌷Powered By : [SATHYA Server](https://t.me/SATHYA_SEVER).**
+🌷Powered By : [SATHYA Server](https://t.me/SATHYA_0P).**
             """,
             reply_markup=InlineKeyboardMarkup(button),
         )
@@ -42,12 +42,12 @@ async def help_menu_text(answer):
             title="🥀 Help Menu ✨",
             input_message_content=InputTextMessageContent(f"""
 **🥀 Welcome To Help Menu Of
-Genius Userbot » {__version__} ✨...
+satya Userbot Made by satya op » {__version__} ✨...
 
-Click On Below 🌺 Buttons To
+Click On Below 🇲🇨 Buttons To
 Get Userbot Commands.
 
-🌷Powered By : [🐉SATHYA Server](https://t.me/SATHYA_SEVER).**""",
+🌷Powered By : [🐉SATHYA Server](https://t.me/SATHYA_0P).**""",
             disable_web_page_preview=True
             ),
             reply_markup=InlineKeyboardMarkup(button),
